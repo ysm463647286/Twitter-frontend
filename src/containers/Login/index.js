@@ -6,7 +6,8 @@ const initialValues = {
   password: '12345'
 };
 const Login= () => {
-  const [form] = Form.useForm()
+  const [form] = Form.useForm();
+
   const onSubmit = () => {
     const values = form.getFieldsValue()
     Dialog.alert({
