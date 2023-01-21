@@ -1,0 +1,16 @@
+{
+  "user": [
+    {
+      "username": "阿皮",
+      "password": "12345",
+      "age": "23",
+      "address": "11025 26 Ave NW"
+    },
+    {
+      "username": "丞丞",
+      "password": "12345",
+      "age": "23",
+      "address": "紫文苑"
+    }
+  ]
+}
