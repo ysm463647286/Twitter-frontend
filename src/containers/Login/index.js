@@ -1,18 +1,30 @@
 import { useState } from 'react';
-import { Button, Input, Form, Dialog} from 'antd-mobile';
+import { 
+  Button, Input, Form, Dialog
+} from 'antd-mobile';
+import { loginService } from '../../services/login';
 import './index.css';
+
 const initialValues = {
   username: '阿皮',
   password: '12345'
 };
+
 const Login= () => {
   const [form] = Form.useForm();
 
-  const onSubmit = () => {
+  const onSubmit = async () => {
     const values = form.getFieldsValue()
+    const res = await loginService(values.username, values.password);
+    if (res && res.length > 0) {
+      Dialog.alert({
+        content: 'Logged in successfully ！',
+      });
+      return;
+    }
     Dialog.alert({
-      content: <pre>{JSON.stringify(values, null, 2)}</pre>,
-    })
+      content: "Wrong username or password.",
+    });
   }
 
   return (

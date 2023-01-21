@@ -6,3 +6,6 @@ npm start
 
 # how to access
 http://localhost:3000/
+
+# backend web service
+using json-serveer
